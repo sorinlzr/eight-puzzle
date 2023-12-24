@@ -1,21 +1,9 @@
 import random
 
 
-class State:
+class PuzzleGenerator:
     def __init__(self):
         self.puzzle = self.create_random_puzzle()
-
-    def get_coordinates_of_empty_tile(self, target):
-        """
-        perform a linear search on the puzzle to find the target
-        :param target: the value of the tile to look for
-        :return: coordinates of the target tile
-        """
-        for i in range(len(self.puzzle)):
-            for j in range(len(self.puzzle[i])):
-                if self.puzzle[i][j] == target:
-                    return [i, j]
-        return [-1, -1]
 
     def get_inv_count(self, arr):
         inv_count = 0
@@ -50,4 +38,3 @@ class State:
         :return:
         """
         return '\n'.join(' '.join(map(str, row)) for row in self.puzzle)
-
