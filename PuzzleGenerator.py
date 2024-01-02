@@ -1,5 +1,20 @@
-import random
+"""
+PuzzleGenerator.py - Submodule
+- Inputs & Outputs :
+    - Inputs :
+        - Module has no inputs.
 
+    - Outputs :
+        - Random Puzzle which is guaranteed to be solvable.
+
+- Function of the Submodule :
+    The PuzzleGenerator Class generates a random puzzle, which got checked for solvability.
+    The solvability is checked based upon the number of inversions, that occur within a puzzle.
+        If the number of inversions is even, the puzzle can be solved.
+        If the number is uneven, it can not be solved.
+"""
+
+import random
 
 class PuzzleGenerator:
     def __init__(self):
@@ -18,13 +33,6 @@ class PuzzleGenerator:
         return inv_count % 2 == 0
 
     def create_random_puzzle(self):
-        """
-        Create a random number list, shuffle it and
-        use it to create a puzzle in form of a list of three lists of three numbers.
-        It also checks the solvability of the puzzle, if a number of inversions are even in the input state.
-        A pair of tiles form an inversion if the values on tiles are in reverse order of their appearance in goal state
-        :return: a random puzzle
-        """
         while True:
             numbers = list(range(9))
             random.shuffle(numbers)
@@ -33,8 +41,5 @@ class PuzzleGenerator:
                 return puzzle
 
     def __str__(self):
-        """
-        returns the current state of the puzzle as a string
-        :return:
-        """
         return '\n'.join(' '.join(map(str, row)) for row in self.puzzle)
+
