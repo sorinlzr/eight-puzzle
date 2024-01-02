@@ -1,5 +1,5 @@
 """
-PriorityQueue.py - Submodule
+PriorityQueueWithCounter.py - Submodule
 - Inputs & Outputs :
     - Inputs :
         - Allows to put new items in to the Priority Queue.
